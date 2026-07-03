@@ -15,7 +15,7 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
             - name: hashicorp-test
-              uses: hashicorp/vault-action@v2
+              uses: hashicorp/vault-action@v3
               with:
                url: http://54.205.102.151:8200
                jwtGithubAudience: femi
