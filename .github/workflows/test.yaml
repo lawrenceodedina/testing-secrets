@@ -1,8 +1,6 @@
 name: Testing-vault
 
-permissions:
-    contents: read
-    id-token: write
+
 
 on:
     push:
@@ -10,6 +8,9 @@ on:
 jobs:
     testing-vault:
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
