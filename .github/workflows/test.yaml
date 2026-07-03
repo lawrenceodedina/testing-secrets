@@ -1,0 +1,27 @@
+name: Testing-vault
+
+permissions:
+    contents: read
+    id-token: write
+
+on:
+    push:
+      branches: [main]
+jobs:
+    testing-vault:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: hashicorp-test
+              uses: hashicorp/vault-action@v2
+              with:
+               url: http://54.205.102.151:8200
+               jwtGithubAudience: femi
+               tlsSkipVerify: true
+               role: femi-test-role
+               secrets: |
+                secret/data/apikeys deploymentServer | DEPLOYMENT_KEY
+
+  
+
