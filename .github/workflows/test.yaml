@@ -19,6 +19,7 @@ jobs:
               with:
                url: http://54.205.102.151:8200
                jwtGithubAudience: femi
+               method: jwt
                tlsSkipVerify: true
                role: femi-test-role
                secrets: |
